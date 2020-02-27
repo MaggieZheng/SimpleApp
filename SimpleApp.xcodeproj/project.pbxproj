@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF4C018623FBD13400F5F584 /* ZMZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C018523FBD13400F5F584 /* ZMZViewController.m */; };
 		AF8BAF8523F941DF000AACA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8BAF8423F941DF000AACA1 /* AppDelegate.m */; };
 		AF8BAF8823F941DF000AACA1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8BAF8723F941DF000AACA1 /* SceneDelegate.m */; };
 		AF8BAF8B23F941DF000AACA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8BAF8A23F941DF000AACA1 /* ViewController.m */; };
@@ -14,9 +15,12 @@
 		AF8BAF9023F941E0000AACA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF8BAF8F23F941E0000AACA1 /* Assets.xcassets */; };
 		AF8BAF9323F941E0000AACA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF8BAF9123F941E0000AACA1 /* LaunchScreen.storyboard */; };
 		AF8BAF9623F941E0000AACA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8BAF9523F941E0000AACA1 /* main.m */; };
+		AFDD455823FE104E00EFEBBD /* MZVideoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDD455723FE104E00EFEBBD /* MZVideoCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF4C018423FBD13400F5F584 /* ZMZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMZViewController.h; sourceTree = "<group>"; };
+		AF4C018523FBD13400F5F584 /* ZMZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMZViewController.m; sourceTree = "<group>"; };
 		AF8BAF8023F941DF000AACA1 /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8BAF8323F941DF000AACA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AF8BAF8423F941DF000AACA1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,6 +33,8 @@
 		AF8BAF9223F941E0000AACA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF8BAF9423F941E0000AACA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF8BAF9523F941E0000AACA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AFDD455623FE104E00EFEBBD /* MZVideoCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZVideoCollectionViewController.h; sourceTree = "<group>"; };
+		AFDD455723FE104E00EFEBBD /* MZVideoCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZVideoCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +73,15 @@
 				AF8BAF8723F941DF000AACA1 /* SceneDelegate.m */,
 				AF8BAF8923F941DF000AACA1 /* ViewController.h */,
 				AF8BAF8A23F941DF000AACA1 /* ViewController.m */,
+				AFDD455623FE104E00EFEBBD /* MZVideoCollectionViewController.h */,
+				AFDD455723FE104E00EFEBBD /* MZVideoCollectionViewController.m */,
 				AF8BAF8C23F941DF000AACA1 /* Main.storyboard */,
 				AF8BAF8F23F941E0000AACA1 /* Assets.xcassets */,
 				AF8BAF9123F941E0000AACA1 /* LaunchScreen.storyboard */,
 				AF8BAF9423F941E0000AACA1 /* Info.plist */,
 				AF8BAF9523F941E0000AACA1 /* main.m */,
+				AF4C018423FBD13400F5F584 /* ZMZViewController.h */,
+				AF4C018523FBD13400F5F584 /* ZMZViewController.m */,
 			);
 			path = SimpleApp;
 			sourceTree = "<group>";
@@ -150,6 +160,8 @@
 				AF8BAF8523F941DF000AACA1 /* AppDelegate.m in Sources */,
 				AF8BAF9623F941E0000AACA1 /* main.m in Sources */,
 				AF8BAF8823F941DF000AACA1 /* SceneDelegate.m in Sources */,
+				AF4C018623FBD13400F5F584 /* ZMZViewController.m in Sources */,
+				AFDD455823FE104E00EFEBBD /* MZVideoCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

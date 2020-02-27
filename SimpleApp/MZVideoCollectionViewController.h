@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MZVideoCollectionViewController : UICollectionViewController
+@interface MZVideoCollectionViewController : UIViewController
+
+@property (nonatomic, strong) UICollectionViewFlowLayout *mflowLayout;
 
 @end
 
