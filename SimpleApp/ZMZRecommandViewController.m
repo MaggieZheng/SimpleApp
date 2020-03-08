@@ -8,7 +8,7 @@
 
 #import "ZMZRecommandViewController.h"
 
-@interface ZMZRecommandViewController () <UIScrollViewDelegate>
+@interface ZMZRecommandViewController () <UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @end
 
@@ -38,38 +38,57 @@
     for(int i = 0; i < 5; i++){
         [scrollView addSubview:({
             UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * i, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+            
+            [view addSubview:({
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 300, 300)];
+                view.backgroundColor = [UIColor yellowColor];
+                UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(function1)];
+                gesture.delegate = self;
+                [view addGestureRecognizer:gesture];
+                view;
+            })];
             view.backgroundColor = [colorArray objectAtIndex:i];
             view;
         })];
     }
-//    scrollView.pagingEnabled = YES;
+    scrollView.pagingEnabled = YES;
     [self.view addSubview:scrollView];
 }
 
-// 执行了滚动
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"%@",@"didScroll...");
+-(void) function1{
+    NSLog(@"function1");
 }
 
-// 开始拖拽
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    NSLog(@"%@",@"beginDragging...");
+// 是否需要执行手势
+// 如果需要对具体手势位置进行响应 在这个方法中进行逻辑判断。
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    return NO;
 }
 
-// 结束拖拽
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset API_AVAILABLE(ios(5.0)){
-    NSLog(@"%@",@"endDragging...");
-}
-
-// 开始减速
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-    NSLog(@"%@",@"beginDecelerating...");
-}
-
-// 结束减速
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    NSLog(@"%@",@"endDecelerating...");
-}
+//// 执行了滚动
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    NSLog(@"%@",@"didScroll...");
+//}
+//
+//// 开始拖拽
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    NSLog(@"%@",@"beginDragging...");
+//}
+//
+//// 结束拖拽
+//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset API_AVAILABLE(ios(5.0)){
+//    NSLog(@"%@",@"endDragging...");
+//}
+//
+//// 开始减速
+//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+//    NSLog(@"%@",@"beginDecelerating...");
+//}
+//
+//// 结束减速
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    NSLog(@"%@",@"endDecelerating...");
+//}
 
 
 /*
