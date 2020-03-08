@@ -1,8 +1,7 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
-#import "ZMZViewController.h"
 #import "MZVideoCollectionViewController.h"
-
+#import "ZMZRecommandViewController.h"
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
 @end
@@ -18,21 +17,17 @@
     
     // 新闻页
     ViewController *viewController = [[ViewController alloc] init];
-    
     viewController.tabBarItem.title = @"新闻";
     viewController.tabBarItem.image = [UIImage imageNamed:@"tabbar_news"];  // 图片设置在文字上方
     viewController.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_news_selected"];
     
-//    ZMZViewController *controller2 = [[ZMZViewController alloc] init];
-
+    // 视频页 
     MZVideoCollectionViewController *videoController = [[MZVideoCollectionViewController alloc] init];
 
-    UIViewController *controller3 = [[UIViewController alloc] init];
-    controller3.view.backgroundColor = [UIColor blueColor];
-    controller3.tabBarItem.title = @"推荐";
-    controller3.tabBarItem.image = [UIImage imageNamed:@"tabbar_like"];
-    controller3.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_like_selected"];
+    // 推荐页
+    ZMZRecommandViewController *recommandController = [[ZMZRecommandViewController alloc] init];
     
+    // 我的页
     UIViewController *controller4 = [[UIViewController alloc] init];
     controller4.view.backgroundColor = [UIColor greenColor];
     controller4.tabBarItem.title = @"我的";
@@ -40,7 +35,7 @@
     controller4.tabBarItem.selectedImage = [UIImage imageNamed:@"tarbar_mine_selected"];
     
     // 将四个页面的 UIViewController 加入到 UITabBarController 之中
-    [tabbarController setViewControllers: @[viewController, videoController, controller3, controller4]];
+    [tabbarController setViewControllers: @[viewController, videoController, recommandController, controller4]];
     
     tabbarController.delegate = self;  // 需要自定义执行delegate的方法时在当前的类中进行
     

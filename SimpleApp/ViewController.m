@@ -7,23 +7,7 @@
 //
 
 #import "ViewController.h"
-
-/** 自定义的 TestView 类  **/
-//@interface TestView : UIView
-//
-//@end
-//
-//@implementation TestView
-//
-//- (instancetype) init{
-//    self = [super init];
-//    if(self) {
-//
-//    }
-//    return self;
-//}
-
-//@end
+#import "MZNormalTableViewCell.h"
 
 @interface ViewController()<UITableViewDataSource,UITableViewDelegate>
 
@@ -87,20 +71,22 @@
 //
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //  取回收池中的cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    MZNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if(!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell = [[MZNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"主标题 - %@", @(indexPath.row+1)];
-    cell.detailTextLabel.text = @"副标题";
-    cell.imageView.image = [UIImage imageNamed:@"tabbar_news"];
+    
+    [cell layoutTableViewCell];
+//    cell.textLabel.text = [NSString stringWithFormat:@"主标题 - %@", @(indexPath.row+1)];
+//    cell.detailTextLabel.text = @"副标题";
+//    cell.imageView.image = [UIImage imageNamed:@"tabbar_news"];
     
     return cell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 100;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

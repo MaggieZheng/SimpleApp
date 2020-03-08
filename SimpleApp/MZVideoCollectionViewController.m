@@ -29,9 +29,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    flowLayout.itemSize = CGSizeMake(50, 100);
-//    flowLayout.minimumLineSpacing = 10;
-//    flowLayout.minimumInteritemSpacing = 10;
+    flowLayout.itemSize = CGSizeMake((self.view.frame.size.width - 10)/2, 300);
+    flowLayout.minimumLineSpacing = 10;
+    flowLayout.minimumInteritemSpacing = 10;
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
     
@@ -45,7 +45,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 200;
+    return 20;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -55,5 +55,16 @@
     cell.backgroundColor = [UIColor redColor];
     return cell;
 }
+
+// 通过UICollectionViewDelegateFlowLayout的代理方法来做更细化的自定义样式
+// 这里根据indexPath设置某些特定位置的cell的布局,
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if( indexPath.item % 3 == 0){
+        return CGSizeMake(self.view.frame.size.width, 100);
+    }else{
+        return CGSizeMake((self.view.frame.size.width - 10)/2, 300);
+    }
+}
+
 
 @end
